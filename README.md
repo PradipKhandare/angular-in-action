@@ -1,27 +1,33 @@
 # ReactiveForms
+1. Why not use normal HTML form?
+- When normal HTML form is submitted, it reloads the page by making an HTTP request to the server.
+- Since we create a single page application using angular, we can say that it will restart the complete angular application.
+- To avoid this we need angulars helps to stop this default behaviour. This can be achieved using template driven form or reactive form in angular.
+- Using any one of these two approaches makes working with form easier.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+STEP: 1
+In order to work with reactive form we need to import ReactiveFormsModule from @angular/forms.
 
-## Development server
+STEP: 2
+initialize a form-group using new keyword
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+STEP: 3
+declare form control in ngOnInit into the form group 
 
-## Code scaffolding
+STEP: 4
+use property binding to the form tag in html like.[formGroup]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+STEP: 5
+give form control name to each input field
 
-## Build
+STEP: 6
+give type submit to the submit button
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+STEP: 7
+add event to the form tag like: (ngSubmit)="onFormSubmitted()".
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+(ngSubmit)="onFormSubmitted()"
 
-## Running end-to-end tests
+![image](https://github.com/user-attachments/assets/de129c8c-11da-4103-ba24-d443e5321484)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
