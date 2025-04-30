@@ -31,3 +31,11 @@ add event to the form tag like: (ngSubmit)="onFormSubmitted()".
 
 ![image](https://github.com/user-attachments/assets/de129c8c-11da-4103-ba24-d443e5321484)
 
+
+#Adding validations into the form:
+Note: to add validation to the form inputs we have to use Validators from @angular/forms in form control.
+To display validation message or change the border color if invalid we use form control properties for example invalid, touched, valid.
+
+![image](https://github.com/user-attachments/assets/f6159321-c513-4713-908f-4cea2b84b480)
+
+
