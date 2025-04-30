@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -16,23 +16,26 @@ export class AppComponent {
 
   reactiveForm: FormGroup;
 
-  ngOnInit(){
+  ngOnInit() {
     this.reactiveForm = new FormGroup({
-      firstname: new FormControl(null),
-      lastname: new FormControl(null),
-      email: new FormControl(null),
+      firstname: new FormControl(null, Validators.required),
+      lastname: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
       username: new FormControl(null),
       dob: new FormControl(null),
-      street: new FormControl(null),
       gender: new FormControl('male'),
-      country: new FormControl('India'),
-      city: new FormControl(null),
-      region: new FormControl(null),
-      postal: new FormControl(null),
+      address: new FormGroup({
+        country: new FormControl('India', Validators.required),
+        city: new FormControl(null),
+        region: new FormControl(null),
+        postal: new FormControl(null, Validators.required),
+        street: new FormControl(null, Validators.required),
+      }),
+
     });
   }
 
-  onFormSubmitted(){
+  onFormSubmitted() {
     console.log(this.reactiveForm);
   }
 
