@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -31,12 +31,26 @@ export class AppComponent {
         postal: new FormControl(null, Validators.required),
         street: new FormControl(null, Validators.required),
       }),
+      skills: new FormArray([
+        new FormControl(null, Validators.required),
 
+      ]),
     });
   }
 
   onFormSubmitted() {
     console.log(this.reactiveForm);
+  }
+
+  addSkills() {
+    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(
+      null, Validators.required
+    ))
+  }
+
+  deleteSkill(i: number) {
+    const controls = (<FormArray>this.reactiveForm.get('skills'));
+    controls.removeAt(i);
   }
 
 }
