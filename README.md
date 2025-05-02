@@ -115,6 +115,11 @@ this.formArray.push(new FormControl(''));
 ### Dynamic Form Controls
 ![Dynamic Form Controls](https://github.com/user-attachments/assets/537c0e4a-d7d3-4e2d-93f3-5f0e00f51c5f)
 
+
+### Adding FormGroup Dynamically
+![Dynamic Form Groups](https://github.com/user-attachments/assets/17878a38-ebfd-45d5-a7c2-3f88a0460024)
+
+
 ---
 
 ## 🚀 Conclusion
