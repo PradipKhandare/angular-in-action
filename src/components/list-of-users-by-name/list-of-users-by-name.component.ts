@@ -54,6 +54,7 @@ export class ListOfUsersByNameComponent {
 
   puneEmployee = this.employee.filter(empl => empl.location == 'Pune');
   belowEighteenEmployee = this.employee.filter(emp => emp.age < 18);
+  adminRoleEmployee = this.employee.filter(emp => emp.role == 'Admin');
 
   searchEmployee = '';
 
