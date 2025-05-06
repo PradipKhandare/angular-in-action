@@ -1,0 +1,44 @@
+<input type="text" [(ngModel)]="searchText" (ngModelChange)="filterUsers()" placeholder="Search user name here" />
+<ul>
+    <li *ngFor="let user of filteredUSers">
+        {{user.name}}
+    </li>
+</ul>
+
+<input type="text" [(ngModel)]="searchAge" (ngModelChange)="filterAge()" placeholder="search age here" />
+<ul>
+    <li *ngFor="let age of filteredUSers">
+        {{age.age}}
+    </li>
+</ul>
+
+<input type="text" [(ngModel)]="searchEmployee" (ngModelChange)="filterEmployeByName()"
+    placeholder="Search employee name here" />
+<ul>
+    <li *ngFor="let employee of filteredEmployee">
+        {{employee.name}}
+    </li>
+</ul>
+
+
+<h4>PUNE EMPLOYEES</h4>
+<ul>
+    <li *ngFor="let emp of puneEmployee">
+        {{emp.name}}
+    </li>
+</ul>
+
+<h4>Under 18 Employee: </h4>
+<ul>
+    <li *ngFor="let emp of belowEighteenEmployee">
+        {{emp.name}}
+    </li>
+</ul>
+
+<input type="text" [(ngModel)]="searchEmailText" (ngModelChange)="filterEmployeeByEmail()"
+    placeholder="search email here">
+<ul>
+    <li *ngFor="let employee of filteredEmployee; let i = index" [ngClass]="i % 2 == 0 ? 'even' : 'odd'">
+        {{employee.email}}
+    </li>
+</ul>
